@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>aula back-ende</title>
 </head>
 <body>
     <h1>calcule a media:</h1>
-    <button onclick="validar()">lançe as notas</button>
+    <button onclick="validar()">Lançe as notas</button>
     <script>
         function validar() {
-            cont = 1;
+            cont=1;
             var media = 0;
             let nome = window.prompt('Qual é o seu nome?')
 
-            while (cony <= 4) {
+            while (cont <= 4) {
                 var notas = parseFloat(prompt(`Qual a nota ${cont}?`))
                 media=media+notas;
                 cont ++
             }
-            window.alert(`Olá, ${media/4}!`)
+            window.alert(`Olá, ${nome} sua média é ${media/4}`)
         }
     </script>
 </body>
