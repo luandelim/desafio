@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pesquisa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>   
+
+    <form id="formPesquisa">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required>
+
+        <label for="escolaridade">Escolaridade:</label>   
+
+        <select id="escolaridade" name="escolaridade" required>
+            <option value="">Selecione</option>
+            <option value="fundamental">Fundamental</option>
+            <option value="medio">Médio</option>
+            <option value="superior">Superior</option>   
+
+        </select>
+
+        <label for="cidade">Cidade:</label>   
+
+        <input type="text" id="cidade" name="cidade" required>
+
+        <label for="sexo">Sexo:</label>
+        <input type="radio" id="feminino" name="sexo" value="f" required>
+        <label for="feminino">Feminino</label>
+        <input type="radio" id="masculino" name="sexo" value="m">   
+
+        <label for="masculino">Masculino</label>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="mensagem" style="display: none;">
+        <p>Obrigado por preencher o formulário!</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
