@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cálculo de Salário com Cadastro</title>
+</head>
+<body>
+    <h1>Cálculo de Salário</h1>
+
+    <form id="formSalario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"><br><br>
+        <label for="salario">Salário:</label>
+        <input type="number" id="salario" name="salario"><br><br>   
+
+        <button type="button" onclick="calcularSalario()">Calcular</button>
+    </form>
+
+    <table id="tabelaCadastro">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Salário Bruto</th>
+                <th>Desconto</th>
+                <th>Salário Líquido</th>
+            </tr>
+        </thead>
+        <tbody id="corpoTabela"></tbody>
+    </table>
+
+    <script>
+        function calcularSalario() {
+            const nome = document.getElementById("nome").value;
+            const salario = parseFloat(document.getElementById("salario").value);
+
+            let desconto = 0;
+
+            if (salario > 5000) {
+                desconto = salario * 0.175;
+            } else if (salario > 4000) {
+                desconto = salario * 0.12;
+            } else if (salario > 3000) {
+                desconto = salario * 0.075;
+            } else if (salario > 1800) {
+                desconto = salario * 0.035;
+            }
+
+            const salarioLiquido = salario - desconto;
+
+            // Criar uma nova linha na tabela
+            const novaLinha = document.createElement('tr');
+            novaLinha.innerHTML = `
+                <td>${nome}</td>
+                <td>R$ ${salario.toFixed(2)}</td>
+                <td>R$ ${desconto.toFixed(2)}</td>
+                <td>R$ ${salarioLiquido.toFixed(2)}</td>
+            `;
+            document.getElementById("corpoTabela").appendChild(novaLinha);
+
+            // Limpar os campos do formulário
+            document.getElementById("nome").value = "";
+            document.getElementById("salario").value = "";
+        }
+    </script>
+</body>
+</html>
